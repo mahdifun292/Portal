@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d1f">
+<title>آکادمی یادگیری | دروازه دانش</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+:root{--bg:#080b18;--panel:rgba(255,255,255,.075);--line:rgba(255,255,255,.13);--text:#f7f8ff;--muted:#aab2d0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;font-family:'Vazirmatn',Tahoma,sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 15% 15%,#34216b 0,transparent 35%),radial-gradient(ellipse at 85% 25%,#073d62 0,transparent 32%),radial-gradient(ellipse at 50% 100%,#351342 0,transparent 42%),#080b18}
+#particles{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.cursor-glow{position:fixed;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(106,95,255,.13),transparent 70%);pointer-events:none;transform:translate(-50%,-50%);z-index:-1}
+nav{width:min(1120px,92%);margin:22px auto 0;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.5px}
+.logo{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#8b5cf6,#22d3ee);box-shadow:0 8px 30px #5c4ee755;font-size:22px}
+.nav-tag{color:#c7ccef;border:1px solid var(--line);background:#ffffff08;padding:9px 15px;border-radius:99px;font-size:12px;backdrop-filter:blur(12px)}
+.hero{text-align:center;padding:76px 18px 34px;max-width:900px;margin:auto;animation:rise .9s both}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #8b7bff55;background:#8b5cf61a;padding:8px 14px;border-radius:99px;color:#d5ceff;font-size:13px}
+.pulse{width:7px;height:7px;background:#55f3c3;border-radius:50%;box-shadow:0 0 13px #55f3c3;animation:pulse 1.8s infinite}
+h1{font-size:clamp(35px,6.5vw,68px);line-height:1.25;margin:24px 0 16px;font-weight:900;letter-spacing:-2px}
+.gradient{background:linear-gradient(100deg,#a78bfa,#67e8f9 48%,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:620px;margin:0 auto;color:var(--muted);font-size:clamp(14px,2vw,17px);line-height:2.1}
+.scroll-hint{margin-top:28px;color:#8992b5;font-size:12px;display:inline-flex;gap:8px;align-items:center}
+.grid{width:min(1050px,92%);margin:24px auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{--accent:#a78bfa;position:relative;min-height:220px;padding:25px 23px 20px;text-decoration:none;color:var(--text);border:1px solid var(--line);border-radius:25px;background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035));overflow:hidden;backdrop-filter:blur(18px);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;animation:rise .7s both;animation-delay:var(--delay,0s)}
+.card:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--accent);opacity:.12;filter:blur(55px);left:-75px;top:-80px;transition:opacity .3s}
+.card:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.09) 45%,transparent 70%);transform:translateX(130%);transition:transform .7s}
+.card:hover{transform:translateY(-8px) scale(1.015);border-color:color-mix(in srgb,var(--accent) 65%,white);box-shadow:0 20px 55px #0005,0 0 28px color-mix(in srgb,var(--accent) 18%,transparent)}
+.card:hover:before{opacity:.28}.card:hover:after{transform:translateX(-130%)}
+.card-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 17%,transparent);border:1px solid color-mix(in srgb,var(--accent) 32%,transparent);font-size:29px;box-shadow:inset 0 0 20px color-mix(in srgb,var(--accent) 8%,transparent)}
+.arrow{width:35px;height:35px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);color:#dce1ff;transition:all .3s;font-size:18px}
+.card:hover .arrow{background:var(--accent);color:#101225;transform:rotate(-35deg);border-color:transparent}
+.card h2{position:relative;z-index:1;font-size:21px;margin:20px 0 6px}
+.card p{position:relative;z-index:1;margin:0;color:#aeb6d3;font-size:13px;line-height:1.9}
+.card .label{position:relative;z-index:1;display:inline-block;margin-top:17px;font-size:11px;color:var(--accent);letter-spacing:.2px}
+footer{text-align:center;color:#7f88a9;font-size:12px;padding:45px 16px 25px}
+footer span{color:#b5a5ff}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{50%{opacity:.45;box-shadow:0 0 3px #55f3c3}}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.card{min-height:205px;padding:19px 17px}.hero{padding-top:58px}h1{letter-spacing:-1px}}
+@media(max-width:470px){.grid{grid-template-columns:1fr}.card{min-height:180px}.card h2{margin-top:14px}.hero{padding-top:48px}nav{margin-top:14px}.nav-tag{font-size:10px;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas><div class="cursor-glow" id="glow"></div>
+<nav>
+  <div class="brand"><div class="logo">✦</div><span>دروازه دانش</span></div>
+  <div class="nav-tag">✧ مسیر یادگیری تو از اینجا شروع می‌شود</div>
+</nav>
+<header class="hero">
+  <div class="eyebrow"><span class="pulse"></span> فضای یادگیری تعاملی</div>
+  <h1>کنجکاوی‌ات را به <span class="gradient">دانش</span> تبدیل کن</h1>
+  <p>موضوع مورد علاقه‌ات را انتخاب کن و وارد دنیای یادگیری شو؛ از معماهای ریاضی تا شگفتی‌های علوم و دنیای لینوکس.</p>
+  <div class="scroll-hint">↓ &nbsp; یک مسیر را برای شروع انتخاب کن</div>
+</header>
+<main class="grid">
+  <a class="card" href="https://mahdifun292.github.io/Riazi/" style="--accent:#a78bfa;--delay:.05s">
+    <div class="card-top"><div class="icon">∑</div><div class="arrow">↗</div></div>
+    <h2>ریاضی</h2><p>الگوها را کشف کن، مسئله‌ها را حل کن و قدرت تفکرت را به چالش بکش.</p><span class="label">دنیای اعداد و منطق</span>
+  </a>
+  <a class="card" href="https://mahdifun292.github.io/Phisik/" style="--accent:#60a5fa;--delay:.12s">
+    <div class="card-top"><div class="icon">⚛</div><div class="arrow">↗</div></div>
+    <h2>فیزیک</h2><p>قوانین جهان، نیروها و رازهای شگفت‌انگیز طبیعت را بشناس.</p><span class="label">کشف قوانین جهان</span>
+  </a>
+  <a class="card" href="https://mahdifun292.github.io/Shimi/" style="--accent:#34d399;--delay:.19s">
+    <div class="card-top"><div class="icon">🧪</div><div class="arrow">↗</div></div>
+    <h2>شیمی</h2><p>با اتم‌ها، واکنش‌ها و ترکیب‌هایی که دنیای ما را می‌سازند آشنا شو.</p><span class="label">علم تغییر و ترکیب</span>
+  </a>
+  <a class="card" href="https://mahdifun292.github.io/Zist/" style="--accent:#fb7185;--delay:.26s">
+    <div class="card-top"><div class="icon">🧬</div><div class="arrow">↗</div></div>
+    <h2>زیست‌شناسی</h2><p>از سلول‌های کوچک تا پیچیدگی زندگی، شگفتی‌های حیات را ببین.</p><span class="label">رازهای زندگی</span>
+  </a>
+  <a class="card" href="https://mahdifun292.github.io/Ejtemai/" style="--accent:#fbbf24;--delay:.33s">
+    <div class="card-top"><div class="icon">🌍</div><div class="arrow">↗</div></div>
+    <h2>مطالعات اجتماعی</h2><p>جامعه، تاریخ و جغرافیا را بهتر بشناس و نگاه گسترده‌تری پیدا کن.</p><span class="label">شناخت جهان و انسان</span>
+  </a>
+  <a class="card" href="https://mahdifun292.github.io/Linux/" style="--accent:#22d3ee;--delay:.4s">
+    <div class="card-top"><div class="icon">🐧</div><div class="arrow">↗</div></div>
+    <h2>آموزش لینوکس</h2><p>با ترمینال، دستورها و دنیای متن‌باز قدم‌به‌قدم حرفه‌ای‌تر شو.</p><span class="label">قدرت ترمینال و متن‌باز</span>
+  </a>
+</main>
+<footer>ساخته‌شده برای <span>یادگیری، کشف و پیشرفت</span> ✦</footer>
+<script>
+const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
+let w,h,dots=[];
+function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight;dots=Array.from({length:Math.min(85,Math.floor(w/15))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.7+.4,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,a:Math.random()*.55+.15}))}
+function draw(){ctx.clearRect(0,0,w,h);for(let i=0;i<dots.length;i++){let p=dots[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(174,183,255,${p.a})`;ctx.fill();for(let j=i+1;j<dots.length;j++){let q=dots[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.hypot(dx,dy);if(dist<105){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(140,150,255,${.10*(1-dist/105)})`;ctx.stroke()}}}requestAnimationFrame(draw)}
+resize();draw();addEventListener('resize',resize);
+const glow=document.getElementById('glow');
+addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+document.querySelectorAll('.card').forEach(card=>{card.addEventListener('click',()=>{card.style.transform='scale(.98)';setTimeout(()=>card.style.transform='',120)})});
+</script>
+</body>
+                            </html>
